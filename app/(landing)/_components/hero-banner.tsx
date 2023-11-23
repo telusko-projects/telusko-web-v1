@@ -100,7 +100,7 @@ export function HeroBanner() {
               height={514}
               width={530}
               alt="telusko-hero-image"
-              className="-mt-6"
+              className="-mt-6 ml-auto"
             />
           </MotionDiv>
         </section>

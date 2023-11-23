@@ -38,12 +38,12 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen bg-foreground font-sans antialiased",
           fontSans.variable,
           fontHeading.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <header className="sticky top-0 z-40 w-full border-b border-border bg-background">
             <div className="container hidden h-20 items-center justify-between py-6  md:flex">
               <MainNav />
