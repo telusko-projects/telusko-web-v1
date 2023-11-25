@@ -1,5 +1,9 @@
-import { Button } from "@/components/ui/button"
 import { CheckCircle } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+
+import { CourseCard } from "./course-card"
+import { Particles } from "./particles"
 
 const posts = [
   {
@@ -45,100 +49,23 @@ const posts = [
 
 export function CourseCards() {
   return (
-    <div className="relative pb-14">
-      <div
-        className="absolute right-0 top-0 -z-10  transform-gpu overflow-hidden blur-3xl"
-        aria-hidden="true"
-      >
-        <div
-          className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] rotate-[30deg] bg-gradient-to-tr from-emerald-100 to-emerald-200 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-          style={{
-            clipPath:
-              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-          }}
-        />
-      </div>
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:max-w-4xl">
-          <h2 className="font-heading text-3xl font-bold tracking-normal text-gray-200 sm:text-4xl">
+    <div className="relative mx-auto mt-28 max-w-7xl rounded-2xl border border-[#1c1c1e] bg-[#101012] px-4 pb-24 pt-10 shadow-inner shadow-[#1c1c1e]">
+      <Particles
+        className="absolute inset-0 z-10 opacity-40 transition-opacity duration-1000 ease-in-out group-hover/item:opacity-100"
+        quantity={(2 + 1) ** 2 * 10}
+        color="#34d399"
+        vy={-0.2}
+      />
+      <div className="px-6 lg:px-8">
+        <div className="">
+          <h2 className="font-heading text-3xl font-bold tracking-normal text-secondary-foreground/60 sm:text-4xl">
             Our Courses
           </h2>
-          <p className="mt-2 text-lg leading-8 text-gray-400">
+          <p className="mt-2 text-lg leading-8 text-secondary-foreground/40">
             Learn how to grow your business with our expert advice.
           </p>
-
-          <div className="my-16 space-y-20 lg:my-20 lg:space-y-20">
-            {posts.map((post) => (
-              <article
-                key={post.id}
-                className="relative isolate flex flex-col gap-8 rounded-md border border-slate-800 px-6 py-10 lg:flex-row "
-              >
-                <div className="relative aspect-[16/9] bg-card-foreground lg:w-1/2 lg:shrink-0">
-                  <img
-                    src={post.imageUrl}
-                    alt=""
-                    className="absolute inset-0 h-full w-full rounded-2xl object-cover"
-                  />
-                  <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
-                </div>
-                <div className="w-full lg:w-2/3">
-                  <div className="flex items-center gap-x-4 text-xs">
-                    <time dateTime={post.datetime} className="text-gray-500">
-                      {post.date}
-                    </time>
-                    <a
-                      href={post.category.href}
-                      className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
-                    >
-                      {post.category.title}
-                    </a>
-                  </div>
-                  <div className="group relative max-w-xl">
-                    <h3 className="font-heading mt-3 text-lg font-semibold leading-6 text-gray-200 group-hover:text-gray-100">
-                      <a href={post.href}>
-                        <span className="absolute inset-0" />
-                        {post.title}
-                      </a>
-                    </h3>
-                    <ul className="mt-4 grid grid-cols-2 gap-x-4">
-                      {Array.from({ length: 6 }).map((item, index) => (
-                        <li key={index} className="mb-2 inline-flex items-center text-sm text-gray-400">
-                          <CheckCircle className="mr-2 h-3 w-3 text-emerald-600" strokeWidth="3px" />
-                          Lorem ipsum dolor sit.
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    {Array.from({ length: 2 }).map((item, index) => (
-                      <div key={index} className="mt-6 flex border-t border-gray-900/5 pt-6">
-                        <div className="relative flex items-center gap-x-4">
-                          <img
-                            src={post.author.imageUrl}
-                            alt=""
-                            className="h-10 w-10 rounded-full bg-gray-50"
-                          />
-                          <div className="text-sm leading-6">
-                            <p className="font-semibold text-gray-200">
-                              <a href={post.author.href}>
-                                <span className="absolute inset-0" />
-                                {post.author.name}
-                              </a>
-                            </p>
-                            <p className="text-gray-400">Instructor</p>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-6">
-                    <Button variant={"default"} className="w-full text-base font-bold">Enroll Now</Button>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
         </div>
+        <div className="relative h-10 w-full">Prasad</div>
       </div>
     </div>
   )

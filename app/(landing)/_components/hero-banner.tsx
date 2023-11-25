@@ -1,17 +1,30 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
+import { ArrowRight } from "lucide-react"
+import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/button"
 import { MotionA, MotionDiv } from "@/components/framer-motion-client"
 
+import { Particles } from "./particles"
+
 export function HeroBanner() {
+  const { theme } = useTheme()
   return (
-    <div className="relative isolate my-20 overflow-hidden bg-background">
-      <div className="mx-auto flex max-w-7xl justify-center px-6 pb-24 pt-10 text-center sm:pb-32 lg:flex lg:px-8 lg:py-32">
-        <section className="relative md:grid md:grid-cols-2 md:gap-8">
-          <div className="flex flex-col gap-4 text-start">
+    <div className="relative isolate mt-28">
+      <div className="relative z-0 mx-auto flex max-w-7xl justify-center rounded-2xl border border-[#1c1c1e] bg-[#101012] px-4 pb-24 pt-10 text-center shadow-inner shadow-[#1c1c1e] sm:pb-32 lg:flex lg:px-8 lg:py-32">
+        <Particles
+          className="absolute inset-0 -z-10 opacity-40 transition-opacity duration-1000 ease-in-out group-hover/item:opacity-100"
+          quantity={(3 + 1) ** 2 * 10}
+          color="#34d399"
+          vy={-0.2}
+        />
+        <section className="relative lg:grid lg:grid-cols-2 lg:gap-8">
+          <div className="flex flex-col gap-4 text-start md:text-center lg:text-start">
             <MotionDiv
-              className="flex h-[45px] w-[90px] items-center space-x-4 rounded-lg transition"
+              className="relative flex items-center justify-start gap-4 md:justify-center lg:justify-start"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -24,7 +37,7 @@ export function HeroBanner() {
               </h6>
             </MotionDiv>
             <MotionDiv
-              className="relative max-w-4xl"
+              className="relative max-w-3xl lg:max-w-4xl"
               initial={{ opacity: 0, top: 20 }}
               animate={{ opacity: 1, top: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
@@ -34,32 +47,53 @@ export function HeroBanner() {
               </h1>
             </MotionDiv>
             <MotionDiv
-              className="relative max-w-xl"
+              className="relative mx-auto w-full md:max-w-xl lg:mx-0"
               initial={{ opacity: 0, top: 20 }}
               animate={{ opacity: 1, top: 0 }}
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             >
-              <p className="text-lg text-secondary-foreground/60 dark:text-secondary-foreground/40">
+              <p className="text-start text-lg text-secondary-foreground/60 dark:text-secondary-foreground/40">
                 Embark on a coding adventure with our Java courses. Master the
                 language, build projects, and transform your future with
                 hands-on learning and expert guidance.
               </p>
             </MotionDiv>
             <MotionDiv
-              className="relative mt-4 flex flex-col gap-4 md:flex-row"
+              className="relative mt-4 flex flex-col gap-4 md:flex-row md:justify-center lg:justify-start"
               initial={{ opacity: 0, top: 20 }}
               animate={{ opacity: 1, top: 0 }}
               transition={{ duration: 0.4, delay: 0.4, ease: "easeOut" }}
             >
-              <button className="relative inline-flex h-12 overflow-hidden rounded-md p-[2px] focus:outline-none">
-                <span className="absolute inset-[-1000%] bg-primary dark:animate-[spin_2s_linear_infinite] dark:bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-                <span className="text-md inline-flex h-full w-full cursor-pointer items-center justify-center rounded-md bg-primary px-4 py-2 font-medium text-secondary backdrop-blur-3xl dark:bg-background dark:text-secondary-foreground/60">
-                  Enroll Now &rarr;
-                </span>
-              </button>
+              <Button className="inline-flex items-center bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-700 text-base font-bold text-secondary-foreground/60 hover:bg-gradient-to-br">
+                Enroll Now <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
             </MotionDiv>
           </div>
-          <div>Image</div>
+          <MotionDiv
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="relative mx-auto flex min-h-min max-w-sm items-center justify-center transition"
+          >
+            <div className="relative mt-32 h-full w-full rounded-md border-2 border-border p-3 pb-0 dark:border-secondary-foreground/60 lg:mt-0">
+              <span className="absolute -right-0 -top-36 md:-right-32">
+                <Image
+                  src={"/work-scribble.svg"}
+                  height={131}
+                  width={249}
+                  alt="Work Scribble"
+                  className="h-full w-full"
+                />
+              </span>
+              <Image
+                src={"/navin.png"}
+                height={220}
+                width={240}
+                alt="Navin Reddy"
+                className="h-full w-full rounded-md object-contain"
+              />
+            </div>
+          </MotionDiv>
         </section>
       </div>
     </div>

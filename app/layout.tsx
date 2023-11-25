@@ -1,16 +1,12 @@
 import type { Metadata } from "next"
 
 import { siteConfig } from "@/config/site"
-import { fontHeading, fontMono, fontSans } from "@/lib/fonts"
+import { fontHeading, fontSans } from "@/lib/fonts"
 
 import "@/styles/globals.css"
 
-import Link from "next/link"
-
 import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
 import { MainNav } from "@/components/main-nav"
-import { ModeToggle } from "@/components/mode-toggle"
 import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
@@ -39,7 +35,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen bg-[#0D0D10] font-sans antialiased",
           fontSans.variable,
           fontHeading.variable
         )}
