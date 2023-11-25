@@ -64,7 +64,7 @@ const posts = [
 
 export function UdemyCourseCard() {
   return (
-    <div className="relative py-14 bg-background">
+    <div className="relative bg-background py-14">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="">
           <h2 className=" inline-flex items-center space-x-3 font-heading text-3xl font-bold tracking-normal text-primary sm:text-4xl">
@@ -79,12 +79,12 @@ export function UdemyCourseCard() {
               <div key={post.id} className="w-full rounded shadow-lg">
               <img className="w-full" src={post.imageUrl} alt="Sunset in the mountains" />
               <div className="px-6 py-4">
-                <div className="font-heading my-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">{post.title}</div>
+                <div className="my-3 font-heading text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">{post.title}</div>
               
                 <ul className="mt-4 flex flex-col">
                       {Array.from({ length: 4 }).map((item, index) => (
-                        <li key={index} className="mb-2 text-sm inline-flex items-center">
-                          <CheckCircle className="w-3 h-3 text-emerald-600 mr-2" strokeWidth="3px"/>
+                        <li key={index} className="mb-2 inline-flex items-center text-sm">
+                          <CheckCircle className="mr-2 h-3 w-3 text-emerald-600" strokeWidth="3px"/>
                           Lorem ipsum dolor sit.
                         </li>
                       ))}

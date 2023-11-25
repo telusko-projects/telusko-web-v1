@@ -1,7 +1,8 @@
 import Image from "next/image"
 
-import { Button } from "@/components/ui/button"
 import { MotionA, MotionDiv } from "@/components/framer-motion-client"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export function HeroBanner() {
   return (
@@ -35,6 +36,7 @@ export function HeroBanner() {
           fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)"
         />
       </svg>
+      <Link href=""><p>Hello </p></Link>
       <div
         className="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]"
         aria-hidden="true"
@@ -65,7 +67,7 @@ export function HeroBanner() {
               animate={{ opacity: 1, top: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <h1 className="font-heading py-4 text-4xl font-semibold leading-[1.1] tracking-wide text-secondary-foreground md:text-5xl">
+              <h1 className="py-4 font-heading text-4xl font-semibold leading-[1.1] tracking-wide text-secondary-foreground md:text-5xl">
                 Elevate Your Skills: Java Mastery Starts Here!
               </h1>
             </MotionDiv>

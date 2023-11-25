@@ -71,15 +71,15 @@ export function CourseCards() {
             {posts.map((post) => (
               <article
                 key={post.id}
-                className="relative isolate flex flex-col gap-8 lg:flex-row px-6 py-10 border border-slate-800 rounded-md "
+                className="relative isolate flex flex-col gap-8 rounded-md border border-slate-800 px-6 py-10 lg:flex-row "
               >
-                <div className="relative aspect-[16/9] lg:w-1/2 lg:shrink-0 bg-card-foreground">
+                <div className="relative aspect-[16/9] bg-card-foreground lg:w-1/2 lg:shrink-0">
                   <img
                     src={post.imageUrl}
                     alt=""
                     className="absolute inset-0 h-full w-full rounded-2xl object-cover"
                   />
-                        <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+                  <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
                 </div>
                 <div className="w-full lg:w-2/3">
                   <div className="flex items-center gap-x-4 text-xs">
@@ -102,37 +102,37 @@ export function CourseCards() {
                     </h3>
                     <ul className="mt-4 grid grid-cols-2 gap-x-4">
                       {Array.from({ length: 6 }).map((item, index) => (
-                        <li key={index} className="mb-2 text-sm inline-flex items-center text-gray-400">
-                          <CheckCircle className="w-3 h-3 text-emerald-600 mr-2" strokeWidth="3px"/>
+                        <li key={index} className="mb-2 inline-flex items-center text-sm text-gray-400">
+                          <CheckCircle className="mr-2 h-3 w-3 text-emerald-600" strokeWidth="3px" />
                           Lorem ipsum dolor sit.
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div className="flex items-center justify-between">
-                    {Array.from({length : 2}).map((item, index) => (
+                    {Array.from({ length: 2 }).map((item, index) => (
                       <div key={index} className="mt-6 flex border-t border-gray-900/5 pt-6">
-                      <div className="relative flex items-center gap-x-4">
-                        <img
-                          src={post.author.imageUrl}
-                          alt=""
-                          className="h-10 w-10 rounded-full bg-gray-50"
-                        />
-                        <div className="text-sm leading-6">
-                          <p className="font-semibold text-gray-200">
-                            <a href={post.author.href}>
-                              <span className="absolute inset-0" />
-                              {post.author.name}
-                            </a>
-                          </p>
-                          <p className="text-gray-400">Instructor</p>
+                        <div className="relative flex items-center gap-x-4">
+                          <img
+                            src={post.author.imageUrl}
+                            alt=""
+                            className="h-10 w-10 rounded-full bg-gray-50"
+                          />
+                          <div className="text-sm leading-6">
+                            <p className="font-semibold text-gray-200">
+                              <a href={post.author.href}>
+                                <span className="absolute inset-0" />
+                                {post.author.name}
+                              </a>
+                            </p>
+                            <p className="text-gray-400">Instructor</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
                     ))}
                   </div>
                   <div className="mt-6">
-                    <Button variant={"default"} className="w-full font-bold text-base">Enroll Now</Button>
+                    <Button variant={"default"} className="w-full text-base font-bold">Enroll Now</Button>
                   </div>
                 </div>
               </article>
