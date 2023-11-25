@@ -8,9 +8,8 @@ export default function Home() {
   return (
     <section>
       <HeroBanner />
-      <hr className="mb-14 " />
-      <CourseCards />
-      <UdemyCourseCard />
+      {/* <CourseCards />
+      <UdemyCourseCard /> */}
     </section>
   )
 }

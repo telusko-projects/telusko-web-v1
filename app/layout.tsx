@@ -10,6 +10,7 @@ import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import { MainNav } from "@/components/main-nav"
+import { ModeToggle } from "@/components/mode-toggle"
 import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
@@ -38,29 +39,16 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "min-h-screen bg-foreground font-sans antialiased",
+          "min-h-screen bg-background font-sans antialiased",
           fontSans.variable,
           fontHeading.variable
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <header className="sticky top-0 z-40 w-full border-b border-border bg-background">
-            <div className="container hidden h-20 items-center justify-between py-6  md:flex">
-              <MainNav />
-              <nav>
-                <Link
-                  href="/sign-in"
-                  className={cn(
-                    buttonVariants({ variant: "secondary", size: "sm" }),
-                    "px-4"
-                  )}
-                >
-                  Courses
-                </Link>
-              </nav>
-            </div>
+          <header className="sticky top-10 z-40 w-full">
+            <MainNav />
           </header>
-          <div className="flex-1">{children}</div>
+          <div className="flex-1 px-4 lg:px-0">{children}</div>
         </ThemeProvider>
       </body>
     </html>

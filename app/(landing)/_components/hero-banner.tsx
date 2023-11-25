@@ -1,73 +1,35 @@
 import Image from "next/image"
-
-import { MotionA, MotionDiv } from "@/components/framer-motion-client"
-import { Button } from "@/components/ui/button"
 import Link from "next/link"
+
+import { Button } from "@/components/ui/button"
+import { MotionA, MotionDiv } from "@/components/framer-motion-client"
 
 export function HeroBanner() {
   return (
-    <div className="relative isolate overflow-hidden bg-background">
-      <svg
-        className="absolute inset-0 -z-10 h-full w-full stroke-black/10 [mask-image:radial-gradient(100%_100%_at_top,white,transparent)]"
-        aria-hidden="true"
-      >
-        <defs>
-          <pattern
-            id="983e3e4c-de6d-4c3f-8d64-b9761d1534cc"
-            width={100}
-            height={100}
-            x="50%"
-            y={-1}
-            patternUnits="userSpaceOnUse"
-          >
-            <path d="M.5 200V.5H200" fill="none" />
-          </pattern>
-        </defs>
-        <svg x="50%" y={-1} className="overflow-visible fill-gray-100/20">
-          <path
-            d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-            strokeWidth={0}
-          />
-        </svg>
-        <rect
-          width="100%"
-          height="100%"
-          strokeWidth={0}
-          fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)"
-        />
-      </svg>
-      <Link href=""><p>Hello </p></Link>
-      <div
-        className="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]"
-        aria-hidden="true"
-      >
-        <div
-          className="aspect-[1108/632] w-[69.25rem] bg-gradient-to-r from-[#80caff] to-green-600 opacity-20"
-          style={{
-            clipPath:
-              "polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)",
-          }}
-        />
-      </div>
+    <div className="relative isolate my-20 overflow-hidden bg-background">
       <div className="mx-auto flex max-w-7xl justify-center px-6 pb-24 pt-10 text-center sm:pb-32 lg:flex lg:px-8 lg:py-32">
         <section className="relative md:grid md:grid-cols-2 md:gap-8">
           <div className="flex flex-col gap-4 text-start">
-            <MotionA
-              href=""
-              className="z-10 inline-flex max-w-max gap-2 rounded-full border border-border bg-primary-foreground px-4 py-2 text-sm font-semibold text-primary transition"
+            <MotionDiv
+              className="flex h-[45px] w-[90px] items-center space-x-4 rounded-lg transition"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Hello Aliens!
-            </MotionA>
+              <button className="animate-background-shine inline-flex items-center justify-center rounded-full border-4 border-emerald-600 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-3 py-1 font-heading text-xl font-bold text-slate-100 transition-colors focus:outline-none">
+                T
+              </button>
+              <h6 className="font-heading text-xl font-bold tracking-wide text-secondary-foreground dark:text-secondary-foreground/60">
+                Telusko.com
+              </h6>
+            </MotionDiv>
             <MotionDiv
               className="relative max-w-4xl"
               initial={{ opacity: 0, top: 20 }}
               animate={{ opacity: 1, top: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <h1 className="py-4 font-heading text-4xl font-semibold leading-[1.1] tracking-wide text-secondary-foreground md:text-5xl">
+              <h1 className="py-4 font-heading text-4xl font-semibold leading-[1.1] tracking-wide text-secondary-foreground dark:text-secondary-foreground/60 md:text-5xl">
                 Elevate Your Skills: Java Mastery Starts Here!
               </h1>
             </MotionDiv>
@@ -77,7 +39,7 @@ export function HeroBanner() {
               animate={{ opacity: 1, top: 0 }}
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             >
-              <p className="text-lg text-[#7F92AF]">
+              <p className="text-lg text-secondary-foreground/60 dark:text-secondary-foreground/40">
                 Embark on a coding adventure with our Java courses. Master the
                 language, build projects, and transform your future with
                 hands-on learning and expert guidance.
@@ -89,22 +51,15 @@ export function HeroBanner() {
               animate={{ opacity: 1, top: 0 }}
               transition={{ duration: 0.4, delay: 0.4, ease: "easeOut" }}
             >
-              <Button>Enroll Now</Button>
+              <button className="relative inline-flex h-12 overflow-hidden rounded-md p-[2px] focus:outline-none">
+                <span className="absolute inset-[-1000%] bg-primary dark:animate-[spin_2s_linear_infinite] dark:bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+                <span className="text-md inline-flex h-full w-full cursor-pointer items-center justify-center rounded-md bg-primary px-4 py-2 font-medium text-secondary backdrop-blur-3xl dark:bg-background dark:text-secondary-foreground/60">
+                  Enroll Now &rarr;
+                </span>
+              </button>
             </MotionDiv>
           </div>
-          <MotionDiv
-            initial={{ opacity: 0, top: 20 }}
-            animate={{ opacity: 1, top: 0 }}
-            transition={{ duration: 0.4, delay: 0.4, ease: "easeOut" }}
-          >
-            <Image
-              src="/telusko-hero.svg"
-              height={514}
-              width={530}
-              alt="telusko-hero-image"
-              className="-mt-6 ml-auto"
-            />
-          </MotionDiv>
+          <div>Image</div>
         </section>
       </div>
     </div>
