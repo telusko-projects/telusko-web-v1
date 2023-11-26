@@ -63,6 +63,14 @@ module.exports = {
         heading: ["var(--font-heading)", ...fontFamily.sans],
       },
       keyframes: {
+        "marquee": {
+          from: {
+            transform: 'translateX(0)',
+          },
+          to: {
+            transform: 'translateX(calc(-100% - 2.5rem))',
+          },
+        },
         "accordion-down": {
           from: { height: 0 },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -85,6 +93,7 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "background-shine": "background-shine 2s linear infinite",
         "spin-slow": "spin 8s linear infinite",
+        "marquee" : "marquee 80s linear infinite"
 
       },
     },

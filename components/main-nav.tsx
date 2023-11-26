@@ -12,8 +12,6 @@ import { Button } from "./ui/button"
 // Sticky Navbar
 
 export function MainNav() {
-  const { theme } = useTheme()
-  console.log(theme)
   return (
     <div className="relative mx-auto flex min-h-min w-full max-w-7xl items-center px-4">
       <div className="relative mx-auto mt-10 inline-flex w-full overflow-hidden rounded-full p-[1px] md:mt-0 md:max-w-md">
