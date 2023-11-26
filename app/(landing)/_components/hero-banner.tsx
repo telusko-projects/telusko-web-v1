@@ -13,7 +13,7 @@ import { Particles } from "./particles"
 export function HeroBanner() {
   const { theme } = useTheme()
   return (
-    <div className="relative isolate mt-28">
+    <div className="relative isolate mt-10 md:mt-28">
       <div className="relative z-0 mx-auto flex max-w-7xl justify-center rounded-2xl border border-[#1c1c1e] bg-[#101012] px-4 pb-24 pt-10 text-center shadow-inner shadow-[#1c1c1e] sm:pb-32 lg:flex lg:px-8 lg:py-32">
         <Particles
           className="absolute inset-0 -z-10 opacity-40 transition-opacity duration-1000 ease-in-out group-hover/item:opacity-100"
@@ -64,7 +64,7 @@ export function HeroBanner() {
               animate={{ opacity: 1, top: 0 }}
               transition={{ duration: 0.4, delay: 0.4, ease: "easeOut" }}
             >
-              <Button className="inline-flex items-center bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-700 text-base font-bold text-secondary-foreground/60 hover:bg-gradient-to-br">
+              <Button className="inline-flex w-max items-center bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-700 text-base font-bold text-secondary-foreground/60 hover:bg-gradient-to-br">
                 Enroll Now <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </MotionDiv>

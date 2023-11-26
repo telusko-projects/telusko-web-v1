@@ -41,7 +41,7 @@ export default function RootLayout({
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <header className="sticky top-10 z-40 w-full">
+          <header className="sticky top-0 z-40 w-full md:top-10">
             <MainNav />
           </header>
           <div className="flex-1 px-4 lg:px-0">{children}</div>

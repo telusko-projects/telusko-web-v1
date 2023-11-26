@@ -49,7 +49,7 @@ const posts = [
 
 export function CourseCards() {
   return (
-    <div className="relative mx-auto mt-28 max-w-7xl rounded-2xl border border-[#1c1c1e] bg-[#101012] px-4 pb-24 pt-10 shadow-inner shadow-[#1c1c1e]">
+    <div className="relative mx-auto my-28 max-w-7xl rounded-2xl border border-[#1c1c1e] bg-[#101012] px-4 pb-24 pt-10 shadow-inner shadow-[#1c1c1e]">
       <Particles
         className="absolute inset-0 z-10 opacity-40 transition-opacity duration-1000 ease-in-out group-hover/item:opacity-100"
         quantity={(2 + 1) ** 2 * 10}
@@ -65,7 +65,10 @@ export function CourseCards() {
             Learn how to grow your business with our expert advice.
           </p>
         </div>
-        <div className="relative h-10 w-full">Prasad</div>
+        <div className="relative grid w-full grid-cols-1 gap-8 md:grid-cols-2">
+          <CourseCard />
+          <CourseCard />
+        </div>
       </div>
     </div>
   )
